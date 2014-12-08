@@ -12,6 +12,7 @@
 
 clear
 version="0.1 (#f0r K@l1L1nux)
+
                 ® nu11secur1ty"
    s="\e[01;34m"; n="\e[00m"
 echo -e "\e[00;32m             
