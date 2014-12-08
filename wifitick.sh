@@ -80,6 +80,10 @@ trap control_c SIGINT
            \e[00;31m WARNING! If you not use wlan0 press Ctrl+C.     
            Then connect your device, and run program again!\e[00m  
           --------------------------------------------------"
+echo -e "
+        \e[00;32m If you not want to use this program just press enter.\e[00m  
+          ---------------------------------------------------"
+
 
 # read user input
        read choice
